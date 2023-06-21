@@ -1,6 +1,10 @@
 <div id="lightning"></div>
 <script src="https://tulsahealthdepartment--dev.sandbox.my.salesforce-sites.com/lightning/lightning.out.js"></script>
 <script>
+
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    
+    
     var clientId = "02938092830982340982";
     var programEnrollmentId = "09823509830598230493";
      $Lightning.use("c:FamilyAdvocatesContactFormApp", function() {
