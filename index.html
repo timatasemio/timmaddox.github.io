@@ -1,8 +1,20 @@
-<html>
-
-<body>
-  <div>This is the page</div>
-<iframe src=“https://tulsahealthdepartment--dev.sandbox.my.salesforce-sites.com/generateInteractionsPage?clientId=00QDQ000001H4Bn2AK&programEnrollmentId=500DQ000000qvRuYAI” height=“700px” width=“700px”></iframe>
-</body>
-
-</html>
+<div id="lightning"></div>
+<script src="https://tulsahealthdepartment--dev.sandbox.my.salesforce-sites.com/lightning/lightning.out.js"></script>
+<script>
+    var clientId = "{!$CurrentPage.parameters.clientId}";
+    var programEnrollmentId = "{!$CurrentPage.parameters.programEnrollmentId}";
+     $Lightning.use("c:FamilyAdvocatesContactFormApp", function() {
+        $Lightning.createComponent("c:familyAdvocatesContactForm",
+          {  "clientId" : clientId,
+            "programEnrollmentId": programEnrollmentId
+          },
+          "LightningComponentid",
+              function(cmp) {
+                console.log("LWC component was created");
+                // do some stuff
+              }
+          );
+        },
+       'https://tulsahealthdepartment--dev.sandbox.my.salesforce-sites.com/'
+      );
+</script>
